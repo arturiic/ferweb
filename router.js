@@ -14,7 +14,8 @@ router.get('/', (req, res) => {
         if (error) {
             console.error("No se puden acceder a los datos");
         } else {
-            res.send(results);
+            // res.send(results);
+            res.render("index", { peliculas: results });
         }
     });
 });
