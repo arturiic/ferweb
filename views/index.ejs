@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PAGINA PRINCIPAL</title>
+</head>
+<body>
+    <h1>Bien venidos</h1>
+    <h2><%= pelicula %></h2>
+    <h3><%= cancion %></h3>
+    <h2>MIS PELICULAS FAVORITAS</h2>
+    <ul>
+      <% lista.forEach(element => { %>
+        <li><%= element %></li>
+      <% }); %>
+    </ul>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium, numquam,
+       saepe expedita voluptatibus quaerat illo qui reprehenderit,
+       repellat libero vitae quae adipisci magni quibusdam nulla voluptates ducimus ea? Dignissimos, aut!
+      </p>
+</body>
+</html>
