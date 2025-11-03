@@ -1,69 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PELICULAS</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="/css/dashboard.css" rel="stylesheet">
-</head>
-
-<body>
-  <!-- ASIDE MENU LATERAL -->
-  <%- include('partials/aside') %>
-  <!-- NAVBAR SUPERIOR -->
-  <%- include('partials/nav') %>
-  <div class="main-content">
-    <main class="flex-grow-1">
-      <section class="container mt-3">
-        <div class="card">
-          <div class="card-header d-flex justify-content-between align-items-center">
-            <h6 class="mb-0">Peliculas Registradas</h6>
-            <a href="./create" class="btn btn-success btn-sm">Registrar Nueva Pelicula</a>
-          </div>
-          <div class="card-body p-0">
-            <table class="table table-sm table-striped mb-0">
-              <thead class="table-dark">
+<section class="container mt-3">
+  <div class="card">
+    <div class="card-header d-flex justify-content-between align-items-center">
+      <h6 class="mb-0">Películas Registradas</h6>
+      <a href="./create" class="btn btn-success btn-sm">Registrar Nueva Película</a>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-12">
+          <table class="table table-sm table-striped">
+            <thead class="table-dark">
+              <tr>
+                <th>#</th>
+                <th>Título</th>
+                <th>Autor</th>
+                <th>Duración</th>
+                <th>Estreno</th>
+                <th>Puntuación</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% peliculas.forEach(pelicula=> { %>
                 <tr>
-                  <th>#</th>
-                  <th>Título</th>
-                  <th>Autor</th>
-                  <th>Duración</th>
-                  <th>Estreno</th>
-                  <th>Puntuación</th>
-                  <th>Acciones</th>
+                  <td><%= pelicula.id %></td>
+                  <td><%= pelicula.titulo %></td>
+                  <td><%= pelicula.autor %></td>
+                  <td><%= pelicula.duracionmin %></td>
+                  <td><%= pelicula.estreno %></td>
+                  <td><%= pelicula.puntuacion %></td>
+                  <td>
+                    <a href="/delete/<%= pelicula.id %>" class="btn btn-danger btn-sm">Eliminar</a>
+                    <a href="/edit/<%= pelicula.id %>" class="btn btn-warning btn-sm">Editar</a>
+                  </td>
                 </tr>
-              </thead>
-              <tbody>
-                <% peliculas.forEach(pelicula=> { %>
-                  <tr>
-                    <td><%= pelicula.id %></td>
-                    <td><%= pelicula.titulo %></td>
-                    <td><%= pelicula.autor %></td>
-                    <td><%= pelicula.duracionmin %></td>
-                    <td><%= pelicula.estreno %></td>
-                    <td><%= pelicula.puntuacion %></td>
-                    <td>
-                      <a href="/delete/<%= pelicula.id %>" class="btn btn-danger btn-sm">Eliminar</a>
-                      <a href="/edit/<%= pelicula.id %>" class="btn btn-warning btn-sm">Editar</a>
-                    </td>
-                  </tr>
-                <% }); %>
-              </tbody>
-            </table>
-          </div>
+              <% }); %>
+            </tbody>
+          </table>
         </div>
-      </section>
-    </main>
+      </div>
+    </div>
   </div>
-  <!-- FOOTER -->
-  <%- include('partials/footer') %>
-  <script>
-    document.getElementById('toggle-aside').onclick = function () {
-      document.body.classList.toggle('hide-aside');
-    };
-  </script>
-</body>
-
-</html>
+</section>

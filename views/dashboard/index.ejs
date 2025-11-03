@@ -1,0 +1,60 @@
+<section class="container mt-3">
+  <div class="card">
+    <div class="card-header">
+      <h4 class="mb-0">Bienvenido al Dashboard de FerWeb</h4>
+    </div>
+    <div class="card-body">
+      <p>Gestiona tus películas y usuarios desde este panel.</p>
+      <div class="row">
+        <div class="col-md-6 mb-4">
+          <div class="card">
+            <div class="card-header">Películas por Año</div>
+            <div class="card-body">
+              <canvas id="chartPeliculas"></canvas>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 mb-4">
+          <div class="card">
+            <div class="card-header">Usuarios Registrados</div>
+            <div class="card-body">
+              <canvas id="chartUsuarios"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+  // Gráfico de películas por año (ejemplo)
+  const ctxPeliculas = document.getElementById('chartPeliculas').getContext('2d');
+  new Chart(ctxPeliculas, {
+    type: 'bar',
+    data: {
+      labels: ['2021', '2022', '2023', '2024', '2025'],
+      datasets: [{
+        label: 'Películas',
+        data: [12, 19, 7, 15, 9],
+        backgroundColor: 'rgba(0,123,255,0.5)'
+      }]
+    }
+  });
+
+  // Gráfico de usuarios registrados (ejemplo)
+  const ctxUsuarios = document.getElementById('chartUsuarios').getContext('2d');
+  new Chart(ctxUsuarios, {
+    type: 'doughnut',
+    data: {
+      labels: ['Activos', 'Inactivos'],
+      datasets: [{
+        label: 'Usuarios',
+        data: [120, 30],
+        backgroundColor: [
+          'rgba(40,167,69,0.7)',
+          'rgba(220,53,69,0.7)'
+        ]
+      }]
+    }
+  });
+</script>

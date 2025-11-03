@@ -3,6 +3,8 @@ body {
   margin: 0;
   padding: 0;
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 aside {
   position: fixed;
@@ -28,9 +30,31 @@ aside a {
 aside a:hover {
   background: #495057;
 }
-.main-content, .navbar, footer {
+.page-wrapper {
   margin-left: 220px;
-  transition: margin-left 0.3s;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.main-content {
+  flex: 1 0 auto;
+}
+footer {
+  background: #dce5ee;
+  color: #6e6969;
+  text-align: left;
+  padding: 0.5rem 2rem;
+  font-size: 0.90rem;
+}
+footer a {
+  color: #0d6efd;
+  text-decoration: none;
+}
+.navbar {
+  color: #fff;
+  z-index: 1;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #e3e3e3;
 }
 .hide-aside aside {
   left: -220px;
@@ -40,22 +64,6 @@ aside a:hover {
 .hide-aside footer {
   margin-left: 0;
 }
-footer {
-  background: #dce5ee;
-  color: #6e6969;
-  text-align: left;
-  padding: 1rem 2rem;
-  margin-left: 220px;
-  font-size: 0.90rem;
-}
-footer a {
-  color: #0d6efd;
-  text-decoration: none;
-}
-.navbar {
-  margin-left: 220px;
-  color: #fff;
-  z-index: 1;
-  margin-bottom: 15px;
-  border-bottom: 2px solid #e3e3e3;
+.hide-aside .page-wrapper {
+  margin-left: 0;
 }
