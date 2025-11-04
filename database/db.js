@@ -5,7 +5,7 @@ const conexion = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: '123',
-    database: 'movietime'
+    database: 'botica_novasalud'
 });
 // ACTIVAR LA CONEXION
 conexion.connect((error) => {
