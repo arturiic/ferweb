@@ -1,0 +1,49 @@
+<section class="container">
+  <h3 class="mb-3">Gestion de Productos</h3>
+  <div class="card">
+    <div class="card-header d-flex justify-content-between align-items-center">
+      <h6 class="mb-0">Productos Registrados</h6>
+      <a href="./form_registrar" class="btn btn-success btn-sm">Registrar Nuevo Producto</a>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-12">
+          <table class="table table-sm table-striped">
+            <thead class="table-dark">
+              <tr>
+                <th>NOMBRE</th>
+                <th>DESCRIPCIÓN</th>
+                <th>PRECIO_COMPRA</th>
+                <th>PRECIO_VENTA</th>
+                <th>STOCK</th>
+                <th>STOCK_MINIMO</th>
+                <th>PROVEEDOR</th>
+                <th>ESTADO</th>
+                <th>ACCIONES</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% productos.forEach(producto => { %>
+                <tr>
+                  <td><%= producto.nombre %></td>
+                  <td><%= producto.descripcion %></td>
+                  <td><%= producto.precio_compra %></td>
+                  <td><%= producto.precio_venta %></td>
+                  <td><%= producto.stock %></td>
+                  <td><%= producto.stock_minimo %></td>
+                  <td><%= producto.idproveedor %></td>
+                  <td><%= producto.estado %></td>
+                  <td>
+                    <button class="btn btn-danger btn-sm" onclick="confirmarEliminacion('<%= producto.idproducto %>')">Eliminar</button>
+                    <a href="/form_editar/<%= producto.idproducto %>" class="btn btn-warning btn-sm">Editar</a>
+                  </td>
+                </tr>
+              <% }); %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script src="/js/productos.js"></script>

@@ -12,23 +12,24 @@ aside {
   left: 0;
   width: 220px;
   height: 100vh;
-  background: #343a40;
-  color: #fff;
+  background: #ddecdd;
+  color: #000000;
   padding-top: 1rem;
   z-index: 2;
   transition: left 0.3s;
   font-size: 0.90rem;
 }
 aside a {
-  color: #d9d8d8;
+  color: #38723d;
   text-decoration: none;
   display: block;
   padding: 0.5rem 1rem;
   border-radius: 4px;
   margin-bottom: 0.5rem;
+  font-weight: bold;
 }
 aside a:hover {
-  background: #495057;
+  background: #b9cabd;
 }
 .page-wrapper {
   margin-left: 220px;
@@ -40,7 +41,7 @@ aside a:hover {
   flex: 1 0 auto;
 }
 footer {
-  background: #dce5ee;
+  background: #bfeba4;
   color: #6e6969;
   text-align: left;
   padding: 0.5rem 2rem;

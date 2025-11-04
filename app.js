@@ -8,6 +8,7 @@ app.use(express.static('public'));
 
 // MIDDLEWARES
 app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 
 // ENRUTADOR
 // EL CARACTER  / REPRESENTA LA RAIZ DE TU WEB https://ferweb.com/

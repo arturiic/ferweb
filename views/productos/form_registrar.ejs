@@ -1,0 +1,53 @@
+<main class="d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+  <section class="col-12 col-md-8 col-lg-6">
+    <form id="formProducto" autocomplete="off">
+      <div class="card">
+        <div class="card-header text-center"><strong>Registrar Producto</strong></div>
+        <div class="card-body">
+          <div class="row g-3">
+            <div class="col-md-6 form-floating">
+              <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre del Producto" required>
+              <label for="nombre">Nombre del Producto</label>
+            </div>
+            <div class="col-md-6 form-floating">
+              <input type="text" class="form-control" id="idproveedor" name="idproveedor" placeholder="Proveedor" required>
+              <label for="idproveedor">Proveedor</label>
+            </div>
+            <div class="col-12 form-floating">
+              <input type="text" class="form-control" id="descripcion" name="descripcion" placeholder="Descripción" required>
+              <label for="descripcion">Descripción</label>
+            </div>
+            <div class="col-md-4 form-floating">
+              <input type="number" class="form-control" id="precio_compra" name="precio_compra" placeholder="Precio de Compra" min="0" step="0.01" required>
+              <label for="precio_compra">Precio de Compra</label>
+            </div>
+            <div class="col-md-4 form-floating">
+              <input type="number" class="form-control" id="precio_venta" name="precio_venta" placeholder="Precio de Venta" min="0" step="0.01" required>
+              <label for="precio_venta">Precio de Venta</label>
+            </div>
+            <div class="col-md-4 form-floating">
+              <select class="form-select" id="estado" name="estado" required>
+                <option value="ACTIVO">ACTIVO</option>
+                <option value="INACTIVO">INACTIVO</option>
+              </select>
+              <label for="estado">Estado</label>
+            </div>
+            <div class="col-md-6 form-floating">
+              <input type="number" class="form-control" id="stock" name="stock" placeholder="Stock" min="0" required>
+              <label for="stock">Stock</label>
+            </div>
+            <div class="col-md-6 form-floating">
+              <input type="number" class="form-control" id="stock_minimo" name="stock_minimo" placeholder="Stock Mínimo" min="0" required>
+              <label for="stock_minimo">Stock Mínimo</label>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer text-end">
+          <button type="button" class="btn btn-primary btn-sm" onclick="registrarProducto()">Guardar</button>
+          <a href="./productos" class="btn btn-secondary btn-sm">Cancelar</a>
+        </div>
+      </div>
+    </form>
+  </section>
+</main>
+<script src="/js/productos.js"></script>
